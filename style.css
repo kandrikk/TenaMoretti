@@ -66,17 +66,35 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Светлый полупрозрачный фон */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Текст поверх затемнения */
 }
 
 .hero-content h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    color: #333; /* Тёмно-серый текст */
 }
 
 .hero-content p {
     font-size: 24px;
     margin-bottom: 30px;
+    color: #333; /* Тёмно-серый текст */
 }
 
 .btn {
@@ -90,6 +108,16 @@ nav ul li a:hover {
 
 .btn:hover {
     background: #ff3b2f;
+}
+
+/* Тёмная тема */
+body.dark-theme .hero::before {
+    background: rgba(0, 0, 0, 0.7); /* Тёмный полупрозрачный фон */
+}
+
+body.dark-theme .hero-content h1,
+body.dark-theme .hero-content p {
+    color: #f9f9f9; /* Белый текст */
 }
 
 /* Секции */
